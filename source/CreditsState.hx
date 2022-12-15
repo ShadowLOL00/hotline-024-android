@@ -91,7 +91,7 @@ class CreditsState extends MusicBeatState
 		intendedColor = bg.color;
 		changeSelection();
 		
-		#if mobile
+		#if android
     addVirtualPad(LEFT_FULL, A_B);
     #end
 		
