@@ -138,6 +138,11 @@ class MusicBeatState extends FlxUIState
 			Paths.customImagesLoaded.clear();
 		}
 		#end
+		
+		#if android
+    addVirtualPad(LEFT_FULL, A_B);
+    #end
+		
 		super.create();
 
 		// Custom made Trans out
