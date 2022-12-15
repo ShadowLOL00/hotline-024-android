@@ -42,12 +42,12 @@ class Paths
 		{
 			var levelPath:String = '';
 			if(currentLevel != 'shared') {
-				levelPath = getLibraryPathForce(file, currentLevel);
+				levelPath = SUtil.getPath() + getLibraryPathForce(file, currentLevel);
 				if (OpenFlAssets.exists(levelPath, type))
 					return levelPath;
 			}
 
-			levelPath = getLibraryPathForce(file, "shared");
+			levelPath = SUtil.getPath() + getLibraryPathForce(file, "shared");
 			if (OpenFlAssets.exists(levelPath, type))
 				return levelPath;
 		}
@@ -62,12 +62,12 @@ class Paths
 
 	inline static function getLibraryPathForce(file:String, library:String)
 	{
-		return '$library:assets/$library/$file';
+		return SUtil.getPath() + '$library:assets/$library/$file';
 	}
 
 	inline public static function getPreloadPath(file:String)
 	{
-		return 'assets/$file';
+		return SUtil.getPath() + 'assets/$file';
 	}
 
 	inline static public function file(file:String, type:AssetType = TEXT, ?library:String)
@@ -112,12 +112,12 @@ class Paths
 
 	inline static public function voices(song:String)
 	{
-		return 'songs:assets/songs/${song.toLowerCase()}/Voices.$SOUND_EXT';
+		return SUtil.getPath() + 'songs:assets/songs/${song.toLowerCase()}/Voices.$SOUND_EXT';
 	}
 
 	inline static public function inst(song:String)
 	{
-		return 'songs:assets/songs/${song.toLowerCase()}/Inst.$SOUND_EXT';
+		return SUtil.getPath() + 'songs:assets/songs/${song.toLowerCase()}/Inst.$SOUND_EXT';
 	}
 
 	inline static public function image(key:String, ?library:String):Dynamic
@@ -135,19 +135,19 @@ class Paths
 		if (!ignoreMods && FileSystem.exists(mods(key)))
 			return File.getContent(mods(key));
 
-		if (FileSystem.exists(getPreloadPath(key)))
-			return File.getContent(getPreloadPath(key));
+		if (FileSystem.exists(SUtil.getPath() + getPreloadPath(key)))
+			return File.getContent(SUtil.getPath() + getPreloadPath(key));
 
 		if (currentLevel != null)
 		{
 			var levelPath:String = '';
 			if(currentLevel != 'shared') {
-				levelPath = getLibraryPathForce(key, currentLevel);
+				levelPath = SUtil.getPath() + getLibraryPathForce(key, currentLevel);
 				if (FileSystem.exists(levelPath))
 					return File.getContent(levelPath);
 			}
 
-			levelPath = getLibraryPathForce(key, 'shared');
+			levelPath = SUtil.getPath() + getLibraryPathForce(key, 'shared');
 			if (FileSystem.exists(levelPath))
 				return File.getContent(levelPath);
 		}
@@ -157,7 +157,7 @@ class Paths
 
 	inline static public function font(key:String)
 	{
-		return 'assets/fonts/$key';
+		return SUtil.getPath() + 'assets/fonts/$key';
 	}
 
 	inline static public function fileExists(key:String, type:AssetType, ?ignoreMods:Bool = false, ?library:String)
@@ -218,7 +218,7 @@ class Paths
 	}
 
 	inline static public function mods(key:String) {
-		return 'mods/' + key;
+		return SUtil.getPath() + 'mods/' + key;
 	}
 	inline static public function modsImages(key:String) {
 		return mods('images/' + key + '.png');
