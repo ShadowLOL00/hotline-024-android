@@ -10,7 +10,7 @@ import android.flixel.FlxVirtualPad;
 /**
  * @author Mihai Alexandru (M.A. Jigsaw)
  */
-class androidControls extends FlxSpriteGroup
+class AndroidControls extends FlxSpriteGroup
 {
 	public static var customVirtualPad(get, set):FlxVirtualPad;
 	public static var mode(get, set):String;
@@ -22,7 +22,7 @@ class androidControls extends FlxSpriteGroup
 	{
 		super();
 
-		switch (androidControls.mode)
+		switch (AndroidControls.mode)
 		{
 			case 'Pad-Right':
 				virtualPad = new FlxVirtualPad(RIGHT_FULL, NONE);
@@ -31,7 +31,7 @@ class androidControls extends FlxSpriteGroup
 				virtualPad = new FlxVirtualPad(LEFT_FULL, NONE);
 				add(virtualPad);
 			case 'Pad-Custom':
-				virtualPad = androidControls.customVirtualPad;
+				virtualPad = AndroidControls.customVirtualPad;
 				add(virtualPad);
 			case 'Pad-Duo':
 				virtualPad = new FlxVirtualPad(BOTH_FULL, NONE);
