@@ -30,7 +30,7 @@ class Main extends Sprite
 	public function new()
 	{
 		super();
-		SUtil.uncaughtErrorHandler();
+		SUtil.gameCrashCheck();
 
 		if (stage != null)
 		{
