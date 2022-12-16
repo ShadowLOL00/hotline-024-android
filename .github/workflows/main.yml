@@ -53,7 +53,7 @@ jobs:
           haxelib --quiet install flixel-addons
           haxelib --quiet install flixel-ui
           haxelib --quiet install hscript
-          haxelib git linc_luajit https://github.com/MAJigsaw77/linc_luajit.git
+          haxelib --quiet git linc_luajit https://github.com/MAJigsaw77/linc_luajit.git
           haxelib --quiet install newgrounds
           haxelib --quiet git extension-androidtools https://github.com/MAJigsaw77/extension-androidtools.git
           haxelib --quiet git extension-webview https://github.com/jigsaw-4277821/extension-webview.git
