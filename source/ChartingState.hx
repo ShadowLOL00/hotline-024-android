@@ -323,11 +323,11 @@ class ChartingState extends MusicBeatState
 		var loadEventJson:FlxButton = new FlxButton(loadAutosaveBtn.x, loadAutosaveBtn.y + 30, 'Load Events', function()
 		{
 			var songName:String = _song.song.toLowerCase();
-			var file:String = Paths.json(songName + '/events');
+			var file:String = SUtil.getPath() + Paths.json(songName + '/events');
 			#if sys
-			if (sys.FileSystem.exists(file))
+			if (sys.FileSystem.exists(SUtil.getPath() + file))
 			#else
-			if (OpenFlAssets.exists(file))
+			if (OpenFlAssets.exists(SUtil.getPath() + file))
 			#end
 			{
 				PlayState.SONG = Song.loadFromJson('events', songName);
@@ -1357,18 +1357,18 @@ class ChartingState extends MusicBeatState
 	function loadHealthIconFromCharacter(char:String) {
 		var characterPath:String = 'characters/' + char + '.json';
 		#if MODS_ALLOWED
-		var path:String = Paths.mods(characterPath);
+		var path:String = SUtil.getPath() + Paths.mods(characterPath);
 		if (!FileSystem.exists(path)) {
-			path = Paths.getPreloadPath(characterPath);
+			path = SUtil.getPath() + Paths.getPreloadPath(characterPath);
 		}
 
 		if (!FileSystem.exists(path))
 		#else
-		var path:String = Paths.getPreloadPath(characterPath);
+		var path:String = SUtil.getPath() + Paths.getPreloadPath(characterPath);
 		if (!OpenFlAssets.exists(path))
 		#end
 		{
-			path = Paths.getPreloadPath('characters/' + Character.DEFAULT_CHARACTER + '.json'); //If a character couldn't be found, change him to BF just to prevent a crash
+			path = SUtil.getPath() + Paths.getPreloadPath('characters/' + Character.DEFAULT_CHARACTER + '.json'); //If a character couldn't be found, change him to BF just to prevent a crash
 		}
 
 		#if MODS_ALLOWED
