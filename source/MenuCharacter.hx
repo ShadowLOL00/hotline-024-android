@@ -22,36 +22,36 @@ class MenuCharacter extends FlxSprite
 
 		switch(character) {
 			case 'bf':
-				frames = SUtil.getPath() + Paths.getSparrowAtlas('menucharacters/Menu_BF');
+				frames = Paths.getSparrowAtlas(SUtil.getPath() + 'menucharacters/Menu_BF');
 				animation.addByPrefix('idle', "M BF Idle", 24);
 				animation.addByPrefix('confirm', 'M bf HEY', 24, false);
 
 			case 'gf':
-				frames = SUtil.getPath() + Paths.getSparrowAtlas('menucharacters/Menu_GF');
+				frames = Paths.getSparrowAtlas(SUtil.getPath() + 'menucharacters/Menu_GF');
 				animation.addByPrefix('idle', "M GF Idle", 24);
 
 			case 'dad':
-				frames = SUtil.getPath() + Paths.getSparrowAtlas('menucharacters/Menu_Dad');
+				frames = Paths.getSparrowAtlas(SUtil.getPath() + SUtil.getPath() + 'menucharacters/Menu_Dad');
 				animation.addByPrefix('idle', "M Dad Idle", 24);
 
 			case 'spooky':
-				frames = SUtil.getPath() + SUtil.getPath() +  Paths.getSparrowAtlas('menucharacters/Menu_Spooky_Kids');
+				frames =  Paths.getSparrowAtlas(SUtil.getPath() + 'menucharacters/Menu_Spooky_Kids');
 				animation.addByPrefix('idle', "M Spooky Kids Idle", 24);
 
 			case 'pico':
-				frames = SUtil.getPath() + Paths.getSparrowAtlas('menucharacters/Menu_Pico');
+				frames = Paths.getSparrowAtlas(SUtil.getPath() + 'menucharacters/Menu_Pico');
 				animation.addByPrefix('idle', "M Pico Idle", 24);
 
 			case 'mom':
-				frames = SUtil.getPath() + Paths.getSparrowAtlas('menucharacters/Menu_Mom');
+				frames = Paths.getSparrowAtlas(SUtil.getPath() + 'menucharacters/Menu_Mom');
 				animation.addByPrefix('idle', "M Mom Idle", 24);
 
 			case 'parents-christmas':
-				frames = SUtil.getPath() + Paths.getSparrowAtlas('menucharacters/Menu_Parents');
+				frames = Paths.getSparrowAtlas(SUtil.getPath() + 'menucharacters/Menu_Parents');
 				animation.addByPrefix('idle', "M Parents Idle", 24);
 
 			case 'senpai':
-				frames = SUtil.getPath() + Paths.getSparrowAtlas('menucharacters/Menu_Senpai');
+				frames = Paths.getSparrowAtlas(SUtil.getPath() + 'menucharacters/Menu_Senpai');
 				animation.addByPrefix('idle', "M Senpai Idle", 24);
 		}
 		animation.play('idle');
