@@ -616,7 +616,7 @@ class FunkinLua {
 		Lua_helper.add_callback(lua, "makeAnimatedLuaSprite", function(tag:String, image:String, x:Float, y:Float) {
 			resetSpriteTag(tag);
 			var leSprite:LuaSprite = new LuaSprite(x, y);
-			leSprite.frames = SUtil.getPath() + Paths.getSparrowAtlas(image);
+			leSprite.frames = Paths.getSparrowAtlas(SUtil.getPath() + image);
 			leSprite.antialiasing = ClientPrefs.globalAntialiasing;
 			sprites.set(tag, leSprite);
 		});
