@@ -484,7 +484,7 @@ class FunkinLua {
 			//trace('Triggered event: ' + name + ', ' + value1 + ', ' + value2);
 		});
 		Lua_helper.add_callback(lua, "playSound", function(sound:String, volume:Float = 1) {
-			FlxG.sound.play(Paths.sound(sound), volume);
+			FlxG.sound.play(Paths.sound(SUtil.getPath() + sound), volume);
 		});
 
 		Lua_helper.add_callback(lua, "startCountdown", function(variable:String) {
@@ -608,7 +608,7 @@ class FunkinLua {
 		Lua_helper.add_callback(lua, "makeLuaSprite", function(tag:String, image:String, x:Float, y:Float) {
 			resetSpriteTag(tag);
 			var leSprite:LuaSprite = new LuaSprite(x, y);
-			leSprite.loadGraphic(Paths.image(image));
+			leSprite.loadGraphic(Paths.image(SUtil.getPath() + image));
 			leSprite.antialiasing = ClientPrefs.globalAntialiasing;
 			sprites.set(tag, leSprite);
 			leSprite.active = false;
@@ -616,7 +616,7 @@ class FunkinLua {
 		Lua_helper.add_callback(lua, "makeAnimatedLuaSprite", function(tag:String, image:String, x:Float, y:Float) {
 			resetSpriteTag(tag);
 			var leSprite:LuaSprite = new LuaSprite(x, y);
-			leSprite.frames = Paths.getSparrowAtlas(image);
+			leSprite.frames = SUtil.getPath() + Paths.getSparrowAtlas(image);
 			leSprite.antialiasing = ClientPrefs.globalAntialiasing;
 			sprites.set(tag, leSprite);
 		});
@@ -701,8 +701,8 @@ class FunkinLua {
 			}
 		});
 		Lua_helper.add_callback(lua, "startDialogue", function(dialogueFile:String, ?song:String = null) {
-			if(FileSystem.exists(Paths.mods('data/' + dialogueFile + '.txt'))) {
-				var shit:Array<String> = File.getContent(Paths.mods('data/' + dialogueFile + '.txt')).trim().split('\n');
+			if(FileSystem.exists(Paths.mods(SUtil.getPath() + 'data/' + dialogueFile + '.txt'))) {
+				var shit:Array<String> = File.getContent(Paths.mods(SUtil.getPath() + 'data/' + dialogueFile + '.txt')).trim().split('\n');
 				for (i in 0...shit.length) {
 					shit[i] = shit[i].trim();
 				}
