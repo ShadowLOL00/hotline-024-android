@@ -40,8 +40,8 @@ class HealthIcon extends FlxSprite
 	public function changeIcon(char:String) {
 		if(this.char != char) {
 			var name:String = 'icons/icon-' + char;
-			if(!Paths.fileExists('images/' + name + '.png', IMAGE)) name = 'icons/icon-face'; //Prevents crash from missing icon
-			var file:Dynamic = Paths.image(name);
+			if(!Paths.fileExists(SUtil.getPath() + 'images/' + name + '.png', IMAGE)) name = 'icons/icon-face'; //Prevents crash from missing icon
+			var file:Dynamic = SUtil.getPath() + Paths.image(name);
 
 			loadGraphic(file, true, 150, 150);
 			animation.add(char, [0, 1], 0, false, isPlayer);
