@@ -92,7 +92,7 @@ class Character extends FlxSprite
 			//case 'your character name in case you want to hardcode him instead':
 
 			default:
-				var characterPath:String = 'characters/' + curCharacter + '.json';
+				var characterPath:String = SUtil.getPath() + 'characters/' + curCharacter + '.json';
 				#if MODS_ALLOWED
 				var path:String = SUtil.getPath() + Paths.mods(characterPath);
 				if (!FileSystem.exists(path)) {
@@ -115,10 +115,10 @@ class Character extends FlxSprite
 				#end
 
 				var json:CharacterFile = cast Json.parse(rawJson);
-				if(Assets.exists(Paths.getPath('images/' + json.image + '.txt', TEXT))) {
-					frames = Paths.getPackerAtlas(json.image);
+				if(Assets.exists(SUtil.getPath() + Paths.getPath('images/' + json.image + '.txt', TEXT))) {
+					frames = SUtil.getPath() + Paths.getPackerAtlas(json.image);
 				} else {
-					frames = Paths.getSparrowAtlas(json.image);
+					frames = SUtil.getPath() + Paths.getSparrowAtlas(json.image);
 				}
 				imageFile = json.image;
 
