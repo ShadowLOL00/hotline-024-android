@@ -79,7 +79,9 @@ class Main extends Sprite
 		
 		SUtil.doTheCheck();
 
-		addChild(new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen));
+		game = new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen);
+		
+		addChild(game);
 
 		#if !android
 		fpsVar = new FPS(10, 3, 0xFFFFFF);
