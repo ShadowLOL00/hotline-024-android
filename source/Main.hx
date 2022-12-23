@@ -70,20 +70,11 @@ class Main extends Sprite
 		initialState = TitleState;
 		#end
 		
-		#if android
-		gameWidth = 1280;
-		gameHeight = 720;
-		zoom = 1;
-		#end
-		
-		
 		SUtil.doTheCheck();
 
-		game = new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen);
-		
-		addChild(game);
+		addChild(new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen));
 
-		#if !android
+		#if !mobile
 		fpsVar = new FPS(10, 3, 0xFFFFFF);
 		addChild(fpsVar);
 		if(fpsVar != null) {
