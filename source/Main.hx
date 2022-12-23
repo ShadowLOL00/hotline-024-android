@@ -70,7 +70,7 @@ class Main extends Sprite
 		initialState = TitleState;
 		#end
 		
-		if android
+		#if android
 		gameWidth = 1280;
 		gameHeight = 720;
 		zoom = 1;
