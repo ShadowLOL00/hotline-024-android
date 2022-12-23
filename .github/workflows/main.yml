@@ -53,9 +53,9 @@ jobs:
           haxelib --quiet install flixel 4.11.0
           haxelib --quiet install flixel-addons 2.11.0
           haxelib --quiet install flixel-ui 2.4.0
-          haxelib --quiet install polymod
           haxelib --quiet install hscript
           haxelib --quiet install newgrounds
+          haxelib --quiet git polymod https://github.com/larsiusprime/polymod.git
           haxelib --quiet git linc_luajit https://github.com/MAJigsaw77/linc_luajit.git
           haxelib --quiet git extension-androidtools https://github.com/MAJigsaw77/extension-androidtools.git
           haxelib list
