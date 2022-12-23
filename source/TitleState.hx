@@ -44,7 +44,7 @@ class TitleState extends MusicBeatState
 	var textGroup:FlxGroup;
 	var logoSpr:FlxSprite;
 
-	var curWacky:Array<String> = [];
+	//var curWacky:Array<String> = [];
 
 	var wackyImage:FlxSprite;
 
@@ -82,7 +82,7 @@ class TitleState extends MusicBeatState
 
 		PlayerSettings.init();
 
-		curWacky = FlxG.random.getObject(SUtil.getPath() + getIntroTextShit());
+		//curWacky = FlxG.random.getObject(SUtil.getPath() + getIntroTextShit());
 
 		// DEBUG BULLSHIT
 
@@ -457,10 +457,10 @@ class TitleState extends MusicBeatState
 				// credTextShit.text = 'Shoutouts Tom Fulp';
 				// credTextShit.screenCenter();
 				case 9:
-					createCoolText([curWacky[0]]);
+					//createCoolText([curWacky[0]]);
 				// credTextShit.visible = true;
 				case 11:
-					addMoreText(curWacky[1]);
+					//addMoreText(curWacky[1]);
 				// credTextShit.text += '\nlmao';
 				case 12:
 					deleteCoolText();
